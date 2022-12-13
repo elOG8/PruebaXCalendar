@@ -1,17 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PruebaXCal.MainPage"
-             xmlns:ViewModels="clr-namespace:PruebaXCal.ViewModels"
-             xmlns:xcViews="clr-namespace:XCalendar.Maui.Views;assembly=XCalendar.Maui"
-             >
-
-            
-            <xcViews:CalendarView
-                Days="{Binding Calendar.Days}"
-                DaysOfWeek="{Binding Calendar.DayNamesOrder}"
-                NavigatedDate="{Binding Calendar.NavigatedDate}"/>
+<ContentPage
+    x:Class="PruebaXCal.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ViewModels="clr-namespace:PruebaXCal.ViewModels"
+    xmlns:xcModels="clr-namespace:XCalendar.Core.Models;assembly=XCalendar.Core"
+    xmlns:xcViews="clr-namespace:XCalendar.Maui.Views;assembly=XCalendar.Maui"
+    x:DataType="{x:Type ViewModels:CalendarViewModel}"
+    Style="{StaticResource DefaultPageStyle}">
+    <VerticalStackLayout>
 
 
+        <xcViews:CalendarView
+            x:Name="FancyCalendarView"
+            BackgroundColor="{Binding CalendarBackgroundColor}"
+            BackwardsArrowCommand="{Binding NavigateCalendarCommand}"
+            BackwardsArrowCommandParameter="{Binding Calendar.BackwardsNavigationAmount}"
+            DayNamesHeightRequest="{Binding DayNamesHeightRequest}"
+            Days="{Binding Calendar.Days}"
+            DaysOfWeek="{Binding Calendar.DayNamesOrder}"
+            DaysViewHeightRequest="{Binding DaysViewHeightRequest}"
+            ForwardsArrowCommand="{Binding NavigateCalendarCommand}"
+            ForwardsArrowCommandParameter="{Binding Calendar.ForwardsNavigationAmount}"
+            IsVisible="{Binding CalendarIsVisible}"
+            NavigatedDate="{Binding Calendar.NavigatedDate}"
+            Style="{StaticResource DefaultCalendarViewStyle}">
 
+            <xcViews:CalendarView.NavigationViewTemplate>
+                <ControlTemplate>
+                    <xcViews:NavigationView
+                        ArrowBackgroundColor="{Binding NavigationArrowBackgroundColor}"
+                        ArrowColor="{Binding NavigationArrowColor}"
+                        BackgroundColor="{Binding NavigationBackgroundColor}"
+                        BackwardsArrowCommand="{Binding BackwardsArrowCommand, Source={x:RelativeSource TemplatedParent}}"
+                        BackwardsArrowCommandParameter="{Binding BackwardsArrowCommandParameter, Source={RelativeSource TemplatedParent}}"
+                        BindingContext="{Binding BindingContext, Source={RelativeSource TemplatedParent}}"
+                        ForwardsArrowCommand="{Binding ForwardsArrowCommand, Source={x:RelativeSource TemplatedParent}}"
+                        ForwardsArrowCommandParameter="{Binding ForwardsArrowCommandParameter, Source={RelativeSource TemplatedParent}}"
+                        HeightRequest="{Binding NavigationHeightRequest}"
+                        Style="{StaticResource DefaultNavigationViewStyle}"
+                        Text="{Binding Text, Source={RelativeSource TemplatedParent}}"
+                        TextColor="{Binding NavigationTextColor}" />
+                </ControlTemplate>
+            </xcViews:CalendarView.NavigationViewTemplate>
+
+            <xcViews:CalendarView.DayTemplate>
+                <DataTemplate x:DataType="{x:Type xcModels:CalendarDay}">
+                    <Border
+                        Margin="2.5"
+                        BackgroundColor="Transparent"
+                        HeightRequest="{Binding BindingContext.DayHeightRequest, Source={x:Reference This}}"
+                        WidthRequest="{Binding BindingContext.DayWidthRequest, Source={x:Reference This}}">
+
+                        <Border.StrokeShape>
+                            <Ellipse />
+                        </Border.StrokeShape>
+
+                        <xcViews:DayView
+                            CurrentMonthBackgroundColor="{Binding BindingContext.DayCurrentMonthBackgroundColor, Source={x:Reference This}}"
+                            CurrentMonthCommand="{Binding BindingContext.ChangeDateSelectionCommand, Source={x:Reference This}}"
+                            CurrentMonthCommandParameter="{Binding DateTime}"
+                            CurrentMonthTextColor="{Binding BindingContext.DayCurrentMonthTextColor, Source={x:Reference This}}"
+                            DateTime="{Binding DateTime}"
+                            InvalidBackgroundColor="{Binding BindingContext.DayInvalidBackgroundColor, Source={x:Reference This}}"
+                            InvalidTextColor="{Binding BindingContext.DayInvalidTextColor, Source={x:Reference This}}"
+                            IsCurrentMonth="{Binding IsCurrentMonth}"
+                            IsInvalid="{Binding IsInvalid}"
+                            IsSelected="{Binding IsSelected}"
+                            IsToday="{Binding IsToday}"
+                            OtherMonthBackgroundColor="{Binding BindingContext.DayOtherMonthBackgroundColor, Source={x:Reference This}}"
+                            OtherMonthTextColor="{Binding BindingContext.DayOtherMonthTextColor, Source={x:Reference This}}"
+                            SelectedBackgroundColor="{Binding BindingContext.DaySelectedBackgroundColor, Source={x:Reference This}}"
+                            SelectedCommand="{Binding BindingContext.ChangeDateSelectionCommand, Source={x:Reference This}}"
+                            SelectedCommandParameter="{Binding DateTime}"
+                            SelectedTextColor="{Binding BindingContext.DaySelectedTextColor, Source={x:Reference This}}"
+                            Style="{StaticResource DefaultDayViewStyle}"
+                            TodayBackgroundColor="{Binding BindingContext.DayTodayBackgroundColor, Source={x:Reference This}}"
+                            TodayCommand="{Binding BindingContext.ChangeDateSelectionCommand, Source={x:Reference This}}"
+                            TodayCommandParameter="{Binding DateTime}"
+                            TodayTextColor="{Binding BindingContext.DayTodayTextColor, Source={x:Reference This}}" />
+                    </Border>
+                </DataTemplate>
+            </xcViews:CalendarView.DayTemplate>
+        </xcViews:CalendarView>
+    </VerticalStackLayout>
 </ContentPage>

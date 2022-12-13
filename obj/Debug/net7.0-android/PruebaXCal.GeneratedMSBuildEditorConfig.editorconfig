@@ -27,11 +27,41 @@ build_metadata.AdditionalFiles.ManifestResourceName = PruebaXCal.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[C:/Users/M15/source/repos/MisApps/PruebaXCal/CustomControls/ColorEditor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PruebaXCal.CustomControls.ColorEditor.xaml
+build_metadata.AdditionalFiles.TargetPath = CustomControls\ColorEditor.xaml
+build_metadata.AdditionalFiles.RelativePath = CustomControls\ColorEditor.xaml
+
 [C:/Users/M15/source/repos/MisApps/PruebaXCal/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PruebaXCal.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/M15/source/repos/MisApps/PruebaXCal/Popups/ColorDialogPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PruebaXCal.Popups.ColorDialogPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Popups\ColorDialogPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Popups\ColorDialogPopup.xaml
+
+[C:/Users/M15/source/repos/MisApps/PruebaXCal/Popups/ConstructListDialogPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PruebaXCal.Popups.ConstructListDialogPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Popups\ConstructListDialogPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Popups\ConstructListDialogPopup.xaml
+
+[C:/Users/M15/source/repos/MisApps/PruebaXCal/Popups/DatePickerDialogPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PruebaXCal.Popups.DatePickerDialogPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Popups\DatePickerDialogPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Popups\DatePickerDialogPopup.xaml
+
+[C:/Users/M15/source/repos/MisApps/PruebaXCal/Popups/SelectItemDialogPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PruebaXCal.Popups.SelectItemDialogPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Popups\SelectItemDialogPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Popups\SelectItemDialogPopup.xaml
 
 [C:/Users/M15/source/repos/MisApps/PruebaXCal/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
