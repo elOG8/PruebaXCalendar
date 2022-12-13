@@ -1,11 +1,9 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using PropertyChanged;
+﻿using PropertyChanged;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace PruebaXCal.ViewModels
 {
-
     [AddINotifyPropertyChangedInterface]
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
@@ -20,5 +18,4 @@ namespace PruebaXCal.ViewModels
         }
         #endregion
     }
-
-    }
+}

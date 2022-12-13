@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using PruebaXCal.Helpers;
 
 
+
 namespace PruebaXCal.ViewModels
 {
     public class CalendarViewModel : BaseViewModel
@@ -22,12 +23,13 @@ namespace PruebaXCal.ViewModels
             NavigationLowerBound = DateTime.Today.AddYears(-2),
             NavigationUpperBound = DateTime.Today.AddYears(2),
             StartOfWeek = DayOfWeek.Monday,
-            SelectionAction = SelectionAction.Add,
+            SelectionAction = SelectionAction.Modify,
+            NavigationLoopMode = NavigationLoopMode.LoopMinimumAndMaximum,
             SelectionType = SelectionType.Single,
+            NavigationTimeUnit = NavigationTimeUnit.Month,
+            PageStartMode = PageStartMode.FirstDayOfMonth,
+            Rows = 2,
             AutoRows = false,
-            NavigationTimeUnit = NavigationTimeUnit.Week,
-            PageStartMode = PageStartMode.FirstDayOfWeek,
-            Rows = 1,
             TodayDate = DateTime.Today,
             ForwardsNavigationAmount = 1,
             BackwardsNavigationAmount = -1
